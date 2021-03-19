@@ -1,5 +1,7 @@
 <?php
 
+namespace Openpay;
+
 /**
  * Openpay API v1 Client for PHP (version 2.0.0)
  * 
@@ -38,6 +40,7 @@ class OpenpayApiDerivedResource extends OpenpayApiResourceBase {
         if ($this->isResourceListed($id)) {
             return $this->cacheList[$id];
         }
+        return null;
     }
 
     protected function removeResource($id) {
@@ -54,7 +57,6 @@ class OpenpayApiDerivedResource extends OpenpayApiResourceBase {
 
     // ---------------------------------------------------------
     // ------------------  PUBLIC FUNCTIONS  -------------------
-
 
     public function add($params) {
         OpenpayConsole::trace('OpenpayApiDerivedResource @add');
@@ -85,7 +87,4 @@ class OpenpayApiDerivedResource extends OpenpayApiResourceBase {
         }
         return $list;
     }
-
 }
-
-?>

@@ -1,5 +1,9 @@
 <?php
 
+namespace Openpay;
+
+use Exception;
+
 /**
  * Openpay API v1 Client for PHP (version 2.0.0)
  * 
@@ -51,28 +55,4 @@ class OpenpayApiError extends Exception
         return $this->fraud_rules;
     }
 
-}
-
-// Authentication related Errors
-class OpenpayApiAuthError extends OpenpayApiError
-{
-    
-}
-
-// Request related Error
-class OpenpayApiRequestError extends OpenpayApiError
-{
-    
-}
-
-// Transaction related Errors
-class OpenpayApiTransactionError extends OpenpayApiError
-{
-    
-}
-
-// Connection related Errors
-class OpenpayApiConnectionError extends OpenpayApiError
-{
-    
 }

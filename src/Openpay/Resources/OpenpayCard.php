@@ -1,5 +1,9 @@
 <?php
 
+namespace Openpay\Resources;
+
+use Openpay\OpenpayApiResourceBase;
+
 /**
  * Openpay API v1 Client for PHP (version 1.0.0)
  * 
@@ -9,7 +13,6 @@
  */
 class OpenpayCard extends OpenpayApiResourceBase
 {
-
     protected $type;
     protected $brand;
     protected $allows_charges;
@@ -26,13 +29,4 @@ class OpenpayCard extends OpenpayApiResourceBase
     public function get($param) {
         return $this->_getAttributes($param);
     }
-
 }
-
-// ----------------------------------------------------------------------------
-class OpenpayCardList extends OpenpayApiDerivedResource
-{
-    
-}
-
-?>

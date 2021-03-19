@@ -1,5 +1,9 @@
 <?php
 
+namespace Openpay\Resources;
+
+use Openpay\OpenpayApiResourceBase;
+
 /**
  * Openpay API v1 Client for PHP (version 1.0.0)
  * 
@@ -25,18 +29,6 @@ class OpenpayFee extends OpenpayApiResourceBase
         if ($resource) {
             return parent::_create($resource->resourceName, $params, array('parent' => $this));
         }
-    }    
-
-}
-
-// ----------------------------------------------------------------------------
-class OpenpayFeeList extends OpenpayApiDerivedResource
-{
-
-    public function create($params) {
-        return $this->add($params);
+        return null;
     }
-
 }
-
-?>

@@ -1,5 +1,7 @@
 <?php
 
+namespace Openpay;
+
 /**
  * Openpay API v1 Client for PHP (version 2.0.0)
  * 
@@ -87,7 +89,4 @@ class OpenpayConsole {
     public static function critical($text) {
         self::_log('critical', self::CONSOLE_CRITICAL, $text);
     }
-
 }
-
-?>

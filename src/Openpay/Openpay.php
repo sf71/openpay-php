@@ -1,16 +1,11 @@
 <?php
 
-/**
- * Openpay API v1 Client for PHP (version 2.0.0)
- * 
- * Copyright © Openpay SAPI de C.V. All rights reserved.
- * http://www.openpay.mx/
- * soporte@openpay.mx
- */
+namespace Openpay;
+
 class Openpay
 {
 
-    private static $instance = null;
+//    private static $instance = null;
     private static $id = '';
     private static $apiKey = '';
     private static $userAgent = '';
@@ -21,7 +16,7 @@ class Openpay
     private static $classification = '';
 
     public function __construct() {
-        
+
     }
 
     public static function getInstance($id = '', $apiKey = '', $country = 'MX') {
@@ -46,7 +41,7 @@ class Openpay
     }
 
     public static function getUserAgent(){
-        $userAgent = self::$userAgent; 
+        $userAgent = self::$userAgent;
         return $userAgent;
     }
 
@@ -57,7 +52,7 @@ class Openpay
     }
 
     public static function getClassificationMerchant(){
-        $classification = self::$classification; 
+        $classification = self::$classification;
         return $classification;
     }
 
@@ -143,40 +138,3 @@ class Openpay
     }
 
 }
-
-// ----------------------------------------------------------------------------
-class OpenpayApi extends OpenpayApiResourceBase
-{
-
-    protected $derivedResources = array(
-        'Bine' => array(),
-        'Customer' => array(),
-        'Card' => array(),
-        'Charge' => array(),
-        'Pse' => array(),
-        'Payout' => array(),
-        'Fee' => array(),
-        'Plan' => array(),
-        'Webhook' => array(),
-        'Token' => array());
-
-    public static function getInstance($r, $p = null) {
-        $resourceName = get_class();
-        return parent::getInstance($resourceName);
-    }
-
-    public function getMerchantInfo(){
-        return parent::getMerchantInfo();
-    }
-
-    protected function getResourceUrlName($p = true) {
-        return '';
-    }
-
-    public function getFullURL() {
-        return $this->getUrl();
-    }
-
-}
-
-?>

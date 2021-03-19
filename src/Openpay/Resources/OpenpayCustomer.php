@@ -1,5 +1,9 @@
 <?php
 
+namespace Openpay\Resources;
+
+use Openpay\OpenpayApiResourceBase;
+
 /**
  * Openpay API v1 Client for PHP (version 1.0.0)
  * 
@@ -29,12 +33,4 @@ class OpenpayCustomer extends OpenpayApiResourceBase {
     public function delete() {
         $this->_delete();
     }
-
 }
-
-// ----------------------------------------------------------------------------
-class OpenpayCustomerList extends OpenpayApiDerivedResource {
-    
-}
-
-?>

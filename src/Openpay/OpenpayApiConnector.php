@@ -1,5 +1,9 @@
 <?php
 
+namespace Openpay;
+
+use Exception;
+
 /**
  * Openpay API v1 Client for PHP (version 2.0.0)
  * 
@@ -167,7 +171,7 @@ class OpenpayApiConnector
                 $k = $prefix."[]";
 
             if (is_array($v)) {
-                $r[] = $this->encodeToQueryString($v, $k, true);
+                $r[] = $this->encodeToQueryString($v, $k);
             } else {
                 $r[] = urlencode($k)."=".urlencode($v);
             }
@@ -224,7 +228,6 @@ class OpenpayApiConnector
             case 401:
             case 403:
                 throw new OpenpayApiAuthError($message, $error, $category, $request_id, $responseCode, $fraud_rules);
-                break;
 
             // Bad Request - Request Entity too large - Request Entity too large - Internal Server Error - Service Unavailable
             case 400:
@@ -234,7 +237,6 @@ class OpenpayApiConnector
             case 500:
             case 503:
                 throw new OpenpayApiRequestError($message, $error, $category, $request_id, $responseCode, $fraud_rules);
-                break;
 
             // Payment Required - Conflict - Preconditon Failed - Unprocessable Entity - Locked
             case 402:
@@ -242,7 +244,6 @@ class OpenpayApiConnector
             case 412:
             case 423:
                 throw new OpenpayApiTransactionError($message, $error, $category, $request_id, $responseCode, $fraud_rules);
-                break;
 
             // Not Found
             default:
@@ -283,7 +284,4 @@ class OpenpayApiConnector
         $connector = self::getInstance();
         return $connector->_request($method, $url, $params);
     }
-
 }
-
-?>

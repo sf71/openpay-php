@@ -1,5 +1,9 @@
 <?php
 
+namespace Openpay\Resources;
+
+use Openpay\OpenpayApiResourceBase;
+
 /**
  * Openpay API v1 Client for PHP (version 1.0.0)
  * 
@@ -19,14 +23,3 @@ class OpenpayPse extends OpenpayApiResourceBase {
     protected $derivedResources = array();    
 
 }
-
-// ----------------------------------------------------------------------------
-class OpenpayPseList extends OpenpayApiDerivedResource {
-
-    public function create($params) {
-        return $this->add($params);
-    }
-
-}
-
-?>
