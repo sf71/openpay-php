@@ -25,8 +25,7 @@ class OpenpayApi extends OpenpayApiResourceBase
         'Token' => array());
 
     public static function getInstance($r, $p = null) {
-        $resourceName = get_class();
-        return parent::getInstance($resourceName);
+        return parent::getInstance(self::class);
     }
 
     public function getMerchantInfo(){

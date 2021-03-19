@@ -124,9 +124,9 @@ abstract class OpenpayApiResourceBase
     private function getResourceName($name) {
         OpenpayConsole::trace('OpenpayApiResourceBase @getResourceName');
         if (substr($name, 0, strlen('Openpay')) == 'Openpay') {
-            return $name;
+            return 'Openpay\\Resources\\' . $name;
         }
-        return 'Openpay'.ucfirst($name);
+        return 'Openpay\\Resources\\Openpay' . ucfirst($name);
     }
 
     private function isResource($resourceName) {
@@ -229,7 +229,13 @@ abstract class OpenpayApiResourceBase
     }
 
     protected function getResourceUrlName($pluralize = true) {
-        $class = $this->resourceName;
+        $pos = strrpos($this->resourceName, '\\');
+        if ($pos === false) {
+            $class = $this->resourceName;
+        } else {
+            $class = substr($this->resourceName, $pos + 1);
+        }
+
         if (substr($class, 0, strlen('Openpay')) == 'Openpay') {
             $class = substr($class, strlen('Openpay'));
         }

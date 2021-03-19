@@ -32,7 +32,7 @@ class OpenpayApiConnector
     // ------------------  PRIVATE FUNCTIONS  ------------------
 
     private function _request($method, $url, $params) {
-        if (!class_exists('Openpay')) {
+        if (!class_exists(Openpay::class)) {
             throw new OpenpayApiError("Library install error, there are some missing classes");
         }
         OpenpayConsole::trace('OpenpayApiConnector @_request');
