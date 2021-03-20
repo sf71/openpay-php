@@ -9,7 +9,7 @@ namespace Openpay;
  * http://www.openpay.mx/
  * soporte@openpay.mx
  */
-class OpenpayConsole {
+class OpenpayApiConsole {
 
     const CONSOLE_NONE = 0;
     const CONSOLE_TRACE = 2;
