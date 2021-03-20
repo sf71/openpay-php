@@ -7,26 +7,27 @@ This is a client implementing the payment services for Openpay at openpay.mx
 What's new?
 -----------
 
-03/19/2021 - PSR-4 compatibility
-02/06/2014 - Fixed: tried to add an optional derived resource when the object was null 
-04/02/2014 - Added: support for Captures on charges
-31/01/2014 - Fixed: Added classes and configs to avoid errors on PHP class autoload feature. Now 
+- 03/19/2021 - PSR-4 compatibility
+- 02/06/2014 - Fixed: tried to add an optional derived resource when the object was null 
+- 04/02/2014 - Added: support for Captures on charges
+- 31/01/2014 - Fixed: Added classes and configs to avoid errors on PHP class autoload feature. Now 
 the autoload is turned off by default
-23/01/2014 - Added: the Sandbox Mode is the default now. Added a method to activate the Production
+- 23/01/2014 - Added: the Sandbox Mode is the default now. Added a method to activate the Production
 Mode explicitly.
 
 
 Compatibility
 -------------
 
-PHP 5.2 or later 
+- PHP 5.2 or later 
 
 Requirements
 ------------
-PHP 5.2 or later 
-cURL extension for PHP
-JSON extension for PHP
-Multibyte String extension for PHP
+
+- PHP 5.2 or later 
+- cURL extension for PHP
+- JSON extension for PHP
+- Multibyte String extension for PHP
 
 Installation
 ------------
