@@ -1,12 +1,13 @@
 ![Openpay PHP](http://www.openpay.mx/img/github/php.jpg)
 
-PHP client for Openpay API services (version 1.2.3)
+PHP client for Openpay API services (version 2.0.0)
 
 This is a client implementing the payment services for Openpay at openpay.mx
 
 What's new?
 -----------
 
+03/19/2021 - PSR-4 compatibility
 02/06/2014 - Fixed: tried to add an optional derived resource when the object was null 
 04/02/2014 - Added: support for Captures on charges
 31/01/2014 - Fixed: Added classes and configs to avoid errors on PHP class autoload feature. Now 
